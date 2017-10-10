@@ -1,0 +1,17 @@
+<h1><%= album.album %></h1>
+
+<dl>
+  <dt>JAN</dt>
+  <dd><%= album.jan %></dd>
+  <dt>release</dt>
+  <dd><%= album.release %></dd>
+</dl>
+
+
+<h2>Track list</h2>
+
+<ul>
+  <% tracks.forEach(track => { %>
+    <li><%= track.track %>. <%= track.music %></li>
+  <% }) %>
+</ul>

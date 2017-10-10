@@ -1,0 +1,37 @@
+version: '2'
+services:
+  cassandra01:
+    container_name: cassandra01
+    build: .
+    ports:
+      - "7000:7000"
+      - "7199:7199"
+      - "9042:9042"
+      - "9160:9160"
+    environment:
+      - CASSANDRA_SEEDS=cassandra01,cassandra02,cassandra03
+  cassandra02:
+    container_name: cassandra02
+    build: .
+    environment:
+      - CASSANDRA_SEEDS=cassandra01,cassandra02,cassandra03
+  cassandra03:
+    container_name: cassandra03
+    build: .
+    environment:
+      - CASSANDRA_SEEDS=cassandra01,cassandra02,cassandra03
+  cassandra04:
+    container_name: cassandra04
+    build: .
+    environment:
+      - CASSANDRA_SEEDS=cassandra01,cassandra02,cassandra03
+  cassandra05:
+    container_name: cassandra05
+    build: .
+    environment:
+      - CASSANDRA_SEEDS=cassandra01,cassandra02,cassandra03
+  web:
+    container_name: cassandra_web
+    build: ./cdshop
+    ports:
+      - "3000:3000"

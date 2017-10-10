@@ -1,0 +1,9 @@
+<h1>Music Store</h1>
+
+<ul>
+  <% albums.forEach(album => { %>
+    <li>
+      <a href="album/<%= album.jan %>"><%= album.release %> / <%= album.album %></a>
+    </li>
+  <% }) %>
+</ul>
